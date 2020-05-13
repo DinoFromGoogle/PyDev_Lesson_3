@@ -3,9 +3,7 @@ import pymorphy2
 text = open('text.txt', 'r', encoding='UTF8')
 text = text.read()          # получаем текст из файла в виде строки
 
-print("."*70)
-print("ЗАДАЧА_1.....Методами строк очистить текст от знаков препинания")
-print("."*70)
+print("."*70 + '\n' + "ЗАДАЧА_1.....Методами строк очистить текст от знаков препинания" + '\n' + "."*70)
 
 last_index = len(text)-1    # индекс завершающего символа в строке
 text_clear = ''             # строчная переменная для записи обработанного строки
@@ -36,13 +34,10 @@ for i in range(1, last_index, 1):  # диапазон задан от второ
 # иначе IndexError: string index out of range
 if text[last_index].isalpha():
     text_clear += text[last_index]
-
 print(text_clear)   # очищенный от знаков препинания текст
-print()
 
-print("."*70)
-print("ЗАДАЧА_2_3.....Сформировать лист со словами и выполнить лемматизацию")
-print("."*70)
+print()
+print("."*70 + '\n' + "ЗАДАЧА_2_3.....Сформировать лист со словами и выполнить лемматизацию" + '\n' + "."*70)
 
 # приведение строки со словами к списку слов
 # через разделение пробелами
@@ -72,17 +67,13 @@ for i in text_words:        # цикл для записи количества 
 print(f'{len(text_words)} - количество разных слов в тексте, исключая предлоги, союзы, частицы')
 print(text_words)
 print()
-# for i in text_words:        # цикл для вывода ключей и значений в столбик
+# for i in text_words:
 #     print(f'{i}....{text_words[i]}')
 
-
-print("."*70)
-print("ЗАДАЧА_4.....Вывести 5 наиболее часто встречающихся слов")
-print("."*70)
+print("."*70 + '\n' + "ЗАДАЧА_4.....Вывести 5 наиболее часто встречающихся слов" + '\n' + "."*70)
 
 words_sorted = list(text_words.items())
 words_sorted.sort(key=lambda x: x[1])
 words_sorted.reverse()
 for i in range(5):
     print(f'{words_sorted[i][0]} \t---\t {words_sorted[i][1]}')
-
